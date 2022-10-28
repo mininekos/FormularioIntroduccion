@@ -24,7 +24,7 @@ namespace Ejercicio2
             if (txtCadena.Text.Length > 0)
             {
                 cont = txtCadena.Text.Count(c => c.Equals(Char.Parse(comboCaracter.Text)));
-                txtResultado.Text += "Condidencias de "+comboCaracter.Text + " en la cadena: "+cont;
+                txtResultado.Text = "Condidencias de "+comboCaracter.Text + " en la cadena: "+cont;
             }
             else {
                 MessageBox.Show("Cadena no valida");
@@ -33,7 +33,13 @@ namespace Ejercicio2
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            if (txtCadena.Text.Count(c => c.Equals(Char.Parse(comboCaracter.Text))) != 0)
+            {
+                txtResultado.Text= txtCadena.Text.Replace(comboCaracter.Text,"");
+            }
+            else {
+                MessageBox.Show("No hay vocal");
+            }
         }
     }
 }
